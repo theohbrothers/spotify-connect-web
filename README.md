@@ -1,9 +1,13 @@
 # Spotify Connect Web
 
+
+[![github-actions](https://github.com/theohbrothers/spotify-connect-web/workflows/ci-master-pr/badge.svg)](https://github.com/theohbrothers/spotify-connect-web/actions)
+[![github-release](https://img.shields.io/github/v/release/theohbrothers/spotify-connect-web?style=flat-square)](https://github.com/theohbrothers/spotify-connect-web/releases/)
+
 This is based off of the example code from https://github.com/plietar/spotify-connect
 
 ## Quickstart using a packaged release
-This is a version of spotify-connect-web with all dependencies bundled (about 7MB compressed, 13MB extracted)  
+This is a version of spotify-connect-web with all dependencies bundled (about 7MB compressed, 13MB extracted)
 For armv7+ (Rpi 2, Rpi 3, etc, but not Rpi 1/Rpi Zero) devices only for now
 
 Grab the latest release from [Releases](https://github.com/Fornoth/spotify-connect-web/releases)
@@ -15,7 +19,7 @@ tar zxvf spotify-connect-web_0.0.4-alpha.tar.gz
 A `spotify-connect-web` directory will be created, and you'll need to put your `spotify_appkey.key` in that directory
 
 ### Running:
-Just run `./spotify-connect-web`  in the extracted directory  
+Just run `./spotify-connect-web`  in the extracted directory
 Supports the same options as the regular version
 
 
@@ -45,8 +49,8 @@ If you just want to get running, you can use a pre-built chroot with the latest 
 * Run it via `~/run-with-docker`.
 
 ## Installation from source
-Requires development packages for `Python`, `FFI`, and `Alsa`  
- - For Debian/Ubuntu: `apt-get install python-dev libffi-dev libasound2-dev`  
+Requires development packages for `Python`, `FFI`, and `Alsa`
+ - For Debian/Ubuntu: `apt-get install python-dev libffi-dev libasound2-dev`
 
 To install the other requirements: `pip install -r requirements.txt`
 
@@ -101,7 +105,7 @@ optional arguments:
 
 ```
 
-`libspotify_embedded_shared.so` must be in the same directory as the python scripts.  
+`libspotify_embedded_shared.so` must be in the same directory as the python scripts.
 Also requires a spotify premium account, and the `spotify_appkey.key` (the binary version) file can be be obtained from https://developer.spotify.com/technologies/libspotify/application-keys/. Fill the 'App-key Request Form' in, send it and wait until you get the key sent via email (it can take a few weeks...).
 
 After receiving it, you need to place it in the python scripts directory, or have the path specified with the `-k` parameter
