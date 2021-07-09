@@ -4,5 +4,6 @@ Flask-Bootstrap>=3.3.2.1,<4.0
 Flask-Cors==2.1.2
 pycparser>=2.10
 pyalsaaudio>=0.8
-gevent>=1.0.1
-pylast>=1.6.0
+gevent>=1.0.1<2.0
+pylast>=1.6.0,<2.0
+werkzeug<1.0
