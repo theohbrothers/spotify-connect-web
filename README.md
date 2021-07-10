@@ -1,8 +1,8 @@
 # Spotify Connect Web
 
-
 [![github-actions](https://github.com/theohbrothers/spotify-connect-web/workflows/ci-master-pr/badge.svg)](https://github.com/theohbrothers/spotify-connect-web/actions)
 [![github-release](https://img.shields.io/github/v/release/theohbrothers/spotify-connect-web?style=flat-square)](https://github.com/theohbrothers/spotify-connect-web/releases/)
+[![docker-image-size](https://img.shields.io/docker/image-size/theohbrothers/spotify-connect-web/latest)](https://hub.docker.com/r/theohbrothers/spotify-connect-web)
 
 This is based off of the example code from https://github.com/plietar/spotify-connect
 
