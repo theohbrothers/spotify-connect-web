@@ -57,7 +57,7 @@ jobs:
       uses: crazy-max/ghaction-docker-buildx@v1
       with:
         version: latest
-    - name: Build and push image
+    - name: Build image
       env:
         DOCKERHUB_REGISTRY_USER: ${{ secrets.DOCKERHUB_REGISTRY_USER }}
       run: |
@@ -79,6 +79,7 @@ jobs:
           -t "${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}:${REF}" \
           -t "${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}:${REF_AND_SHA_SHORT}" \
           -t "${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}:latest" \
+          --output "type=image,push=false" \
           "${BUILD_DIR}"
 
         # List
@@ -134,6 +135,7 @@ jobs:
           -t "${DOCKERHUB_REGISTRY_USER}/${CI_PROJECT_NAME}:${REF}" \
           -t "${DOCKERHUB_REGISTRY_USER}/${CI_PROJECT_NAME}:${REF_AND_SHA_SHORT}" \
           -t "${DOCKERHUB_REGISTRY_USER}/${CI_PROJECT_NAME}:latest" \
+          --output "type=image,push=true" \
           "${BUILD_DIR}"
 
         # Push
