@@ -130,18 +130,13 @@ jobs:
         # Generate the final tags. E.g. 'release-v1.0.0' and 'release-b29758a-v1.0.0'
         REF_AND_SHA_SHORT="${REF}-${SHA_SHORT}"
 
-        # Build
+        # Build and push
         docker buildx build --platform linux/arm64 \
           -t "${DOCKERHUB_REGISTRY_USER}/${CI_PROJECT_NAME}:${REF}" \
           -t "${DOCKERHUB_REGISTRY_USER}/${CI_PROJECT_NAME}:${REF_AND_SHA_SHORT}" \
           -t "${DOCKERHUB_REGISTRY_USER}/${CI_PROJECT_NAME}:latest" \
           --output "type=image,push=true" \
           "${BUILD_DIR}"
-
-        # Push
-        docker push "${DOCKERHUB_REGISTRY_USER}/${CI_PROJECT_NAME}:${REF}"
-        docker push "${DOCKERHUB_REGISTRY_USER}/${CI_PROJECT_NAME}:${REF_AND_SHA_SHORT}"
-        docker push "${DOCKERHUB_REGISTRY_USER}/${CI_PROJECT_NAME}:latest"
 
         # List
         docker images
