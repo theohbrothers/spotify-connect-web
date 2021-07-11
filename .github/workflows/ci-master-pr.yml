@@ -108,7 +108,7 @@ jobs:
         docker buildx build --platform linux/arm64 \
           -t "${GITHUB_REPOSITORY}:${{ steps.resolve_docker_image_tags.outputs.REF }}" \
           -t "${GITHUB_REPOSITORY}:${{ steps.resolve_docker_image_tags.outputs.REF_AND_SHA_SHORT }}" \
-          --output "type=image,push=false" \
+          --output "type=image,push=true" \
           "${BUILD_DIR}"
 
         # List
@@ -122,7 +122,7 @@ jobs:
           -t "${GITHUB_REPOSITORY}:${{ steps.resolve_docker_image_tags.outputs.REF }}" \
           -t "${GITHUB_REPOSITORY}:${{ steps.resolve_docker_image_tags.outputs.REF_AND_SHA_SHORT }}" \
           -t "${GITHUB_REPOSITORY}:latest" \
-          --output "type=image,push=false" \
+          --output "type=image,push=true" \
           "${BUILD_DIR}"
 
     - name: List docker
