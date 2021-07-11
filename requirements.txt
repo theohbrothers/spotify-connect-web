@@ -10,3 +10,4 @@ werkzeug<1.0
 Jinja2>=2.7,<3.0
 itsdangerous>=0.21,<0.22
 click>=2.0,<2.1
+markupsafe==1.0
